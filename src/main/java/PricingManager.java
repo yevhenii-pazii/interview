@@ -15,7 +15,7 @@ public class PricingManager {
     protected DBPricingLogger prodPricingLogger;
     ClientResponse clientResponse;
 
-    private PricingManager() {
+    protected PricingManager() {
         if (testingEnv()) {
             userManager = TestUserManager.getInstance();
         } else {
