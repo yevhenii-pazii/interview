@@ -1,13 +1,18 @@
 import assets.ClientResponse;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.util.Date;
 
 public class ClientController {
 
+    @PostMapping("/use")
     public ClientResponse use() {
         PricingManager pricingManager = new PricingManager();
-        pricingManager.setpromoDate(new Date());
+        var date = new Date();
+        date.setMonth(3);
+        date.setDate(3);
+        pricingManager.setpromoDate(date);
 
         try {
             pricingManager.apply(new ClientResponse());
